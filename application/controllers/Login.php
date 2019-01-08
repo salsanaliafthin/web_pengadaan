@@ -32,6 +32,23 @@ class Login extends CI_Controller {
 		$this->db-> where('password', $password);
 
 		$query=$this->db->get('user');
-		if($query->num_rows() == 1){echo "berhasil";}else{echo "gagal";}
+		
+		if($query->num_rows() == 1){
+			$sess_data = array(
+				'username' => $username,
+			);
+			$this->session->set_userdata('logged_in',$sess_data);
+			redirect('Dashboard');
+		}else{
+			$this->session->set_flashdata('message',"Gagal Login");
+			redirect('Login');
+		}
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('Login');
 	}
 }
+

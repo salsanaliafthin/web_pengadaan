@@ -26,6 +26,8 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign In</h2>
+
+                        <?php echo $this->session->flashdata('message') ?>
                         <form method="POST" class="register-form" id="login-form" action="<?php echo site_url('login/proses');?>">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>

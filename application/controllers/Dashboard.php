@@ -18,8 +18,17 @@ class Dashboard extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct()
+	{
+		parent::__construct();
+		//gae memindah halaman jika belum login
+		if ($this->session->userdata('logged_in') == null) {
+			redirect('Login');
+		}
+	}
 	public function index()
 	{
+
 		$this->load->view('dashboard');
 	}
 }
