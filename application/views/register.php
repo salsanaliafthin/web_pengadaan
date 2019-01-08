@@ -24,7 +24,7 @@
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <input type="text" name="name" id="name" placeholder="Nama Lengkap"/>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
@@ -44,7 +44,7 @@
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="<?php echo base_url('assets_login/');?>images/signin-image.png" alt="sing up image"></figure>
+                        <figure><img src="<?php echo base_url('assets_login/');?>images/signin-image.png" alt="sign up image"></figure>
                         <a href="#" class="signup-image-link">Sudah Punya Akun</a>
                     </div>
                 </div>

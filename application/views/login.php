@@ -31,7 +31,7 @@
                         <form method="POST" class="register-form" id="login-form" action="<?php echo site_url('login/proses');?>">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="username" id="your_name" placeholder="Your Name"/>
+                                <input type="text" name="username" id="your_name" placeholder="Username"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
@@ -56,5 +56,5 @@
     <!-- JS -->
     <script src="<?php echo base_url('assets_login/');?>vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url('assets_login/');?>js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>
