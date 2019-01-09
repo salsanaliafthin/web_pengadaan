@@ -255,7 +255,7 @@ body {
   margin-bottom: 150px; }
 
 .signup-content {
-  padding: 75px 0; }
+  padding: 60px 0; }
 
 .signup-form, .signup-image, .signin-form, .signin-image {
   width: 50%;
@@ -542,7 +542,7 @@ label.valid {
     margin-right: 0px;
     padding-left: 0px;
     /* box-sizing: border-box; */
-    padding: 0 30px; }
+    padding: 0 10px; }
 
   .signin-image {
     margin-left: 0px;
