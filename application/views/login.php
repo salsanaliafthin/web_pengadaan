@@ -21,7 +21,7 @@
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="<?php echo base_url('assets_login/');?>images/signin-image.png" alt="sign up image"></figure>
-                        <a href="<?php echo base_url('Register');?>" class="signup-image-link">Register Pegawai</a>
+                        <a href="<?php echo site_url('Register');?>" class="signup-image-link">Register Pegawai</a>
                     </div>
 
                     <div class="signin-form">

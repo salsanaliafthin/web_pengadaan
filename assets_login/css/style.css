@@ -187,7 +187,7 @@ h2 {
 
 .main {
   background: #f8f8f8;
-  padding: 150px 0; }
+  padding: 10px 0; }
 
 .clear {
   clear: both; }
@@ -198,7 +198,9 @@ body {
   color: #222;
   background: #f8f8f8;
   font-weight: 400;
-  font-family: Poppins; }
+  font-family: Poppins; 
+  overflow: hidden;
+}
 
 .container {
   width: 900px;
