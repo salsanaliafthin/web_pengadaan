@@ -153,6 +153,7 @@
                             <li class="nav-divider">
                                 PANEL PEGAWAI
                             </li>
+                            
                                         <li class="nav-item">
                                             <a class="nav-link" href="pages/general-table.html">Detail Pengadaan Barang</a>
                                         </li>
