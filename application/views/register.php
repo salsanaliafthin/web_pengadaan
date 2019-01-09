@@ -45,7 +45,7 @@
                     </div>
                     <div class="signup-image">
                         <figure><img src="<?php echo base_url('assets_login/');?>images/signin-image.png" alt="sign up image"></figure>
-                        <a href="#" class="signup-image-link">Sudah Punya Akun</a>
+                        <a href="<?php echo site_url('Login');?>" class="signup-image-link">Sudah Punya Akun</a>
                     </div>
                 </div>
             </div>
