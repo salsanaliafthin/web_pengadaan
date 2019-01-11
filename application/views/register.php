@@ -1,61 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
  
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="<?php echo base_url('assets_login/');?>;?>fonts/material-icon/css/material-design-iconic-font.min.css">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="<?php echo base_url('assets');?>/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="<?php echo base_url('assets');?>/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url('assets');?>/assets/libs/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets');?>/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
 
-    <!-- Main css -->
-    <link rel="stylesheet" href="<?php echo base_url('assets_login/');?>css/style.css">
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
 </head>
+
 <body>
-
-    <div class="main">
-
-        <!-- Sign up form -->
-        <section class="signup">
-            <div class="container">
-                <div class="signup-content">
-                    <div class="signup-form">
-                        <h2 class="form-title">Register</h2>
-                        <form method="POST" class="register-form" id="register-form">
-                            <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Nama Lengkap"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Username"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
-                            </div>
-                            <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
-                            </div>
-                        </form>
+    <!-- ============================================================== -->
+    <!-- login page  -->
+    <!-- ============================================================== -->
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"><a href="/index.html"><img class="logo-img" src="/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="username" type="text" placeholder="Username" autocomplete="off">
                     </div>
-                    <div class="signup-image">
-                        <figure><img src="<?php echo base_url('assets_login/');?>images/signin-image.png" alt="sign up image"></figure>
-                        <a href="<?php echo site_url('Login');?>" class="signup-image-link">Sudah Punya Akun</a>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="password" type="password" placeholder="Password">
                     </div>
+                    <div class="form-group">
+                        <select name="jabatankudupersisngdb" class="form-control" id="">
+                            <option value="Japabatan1">Kabatan21</option>
+                            <option value="Japabatan2">Kabatan</option>
+                            <option value="Japabatan3">Kabatan3</option>
+                            <option value="Japabatan4">Kabatan4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                </form>
+            </div>
+            <div class="card-footer bg-white p-0  ">
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="#" class="footer-link">Create An Account</a></div>
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="#" class="footer-link">Forgot Password</a>
                 </div>
             </div>
-        </section>
-    <!-- JS -->
-    <script src="<?php echo base_url('assets_login/');?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?php echo base_url('assets_login/');?>js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+        </div>
+    </div>
+  
+    <!-- ============================================================== -->
+    <!-- end login page  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="<?php echo base_url('assets');?>/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo base_url('assets');?>/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+ 
 </html>
