@@ -34,7 +34,7 @@
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"><a href="/index.html"><img class="logo-img" src="<?php echo base_url('assets/');?>/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-header text-center"><a href="/index.html"><img class="logo-img" src="<?php echo base_url('assets/');?>/assets/images/logo.png" alt="logo"></a><span class="splash-description">Login</span></div>
             <div class="card-body">
                 <form>
                     <div class="form-group">
@@ -51,11 +51,10 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
                 </form>
             </div>
-            <div class="card-footer bg-white p-0  ">
-                <div class="card-footer-item card-footer-item-bordered">
-                    <a href="#" class="footer-link">Create An Account</a></div>
-                <div class="card-footer-item card-footer-item-bordered">
-                    <a href="#" class="footer-link">Forgot Password</a>
+            <div class="card-footer bg-white p-0  text-center ">
+                <div class="card-footer-item card-footer-item-bordered ">
+                    <a href="<?php echo site_url('Register');?>" class="footer-link" >Register</a></div>
+                
                 </div>
             </div>
         </div>
