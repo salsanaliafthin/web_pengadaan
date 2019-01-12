@@ -36,12 +36,13 @@
         <div class="card ">
             <div class="card-header text-center"><a href="/index.html"><img class="logo-img" src="<?php echo base_url('assets/');?>/assets/images/logo.png" alt="logo"></a><span class="splash-description">Login</span></div>
             <div class="card-body">
-                <form>
+                <?php echo $this->session->flashdata('message') ?>
+                <form method="post" action="<?php echo site_url('Login/proses') ?>">
                     <div class="form-group">
-                        <input class="form-control form-control-lg" id="username" type="text" placeholder="Username" autocomplete="off">
+                        <input class="form-control form-control-lg" name="username" type="text" placeholder="Username" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" id="password" type="password" placeholder="Password">
+                        <input class="form-control form-control-lg" name="password" type="password" placeholder="Password">
                     </div>
                     <div class="form-group">
                         <label class="custom-control custom-checkbox">

@@ -38,10 +38,19 @@
             <div class="card-body">
                 <form>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" id="username" type="text" placeholder="Username" autocomplete="off">
+                        <input class="form-control form-control-lg"  name="npp" type="text" placeholder="NPP" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" id="password" type="password" placeholder="Password">
+                        <input class="form-control form-control-lg" name="name" type="text" placeholder="Nama Lengkap" autocomplete="off">
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="username" type="text" placeholder="Username" autocomplete="off">
+                    </div>
+                
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="password" type="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="email" type="text" placeholder="Your Email">
                     </div>
                     <div class="form-group">
                         <select name="jabatankudupersisngdb" class="form-control" id="">
