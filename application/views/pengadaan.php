@@ -11,7 +11,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
                                 <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+                                <li class="breadcrumb-item active" aria-current="page">Tabel Pengadaan</li>
                             </ol>
                         </nav>
                     </div>
@@ -67,6 +67,9 @@
                             <option value="cp2">Per Termin</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                                <label for="">Jangka Waktu</label>
+                            </div>
                             <input type="submit" value="Submit" class="btn btn-primary">
                         </form>
                     </div>
