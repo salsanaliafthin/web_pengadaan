@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Basic Table</h5>
+                    <h5 class="card-header">Tabel Pengadaan</h5>
                     <div class="card-body">
                         <form action="" method="post">
                             <div class="form-group">
@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="">Nomer</label>
+                                <label for="">Nomor</label>
                                 <input type="text" name="nomer" class="form-control">
                             </div>
                             <div class="form-group">
@@ -55,9 +55,18 @@
                                 
                             </div>
                             <div class="form-group">
-                                <label for="">Keterangan</label>
+                                <label for="">Nilai Kontrak</label>
                                 <input type="text" name="Keterangan" class="form-control">
                             </div>
+                            <div class="form-group">
+                                <label for="">Cara Pembayaran</label>
+                            </div>
+                            <div class="form-group">
+                        <select name="jabatanpersisngdb" class="form-control" id="">
+                            <option value="cp1">Langsung</option>
+                            <option value="cp2">Per Termin</option>
+                        </select>
+                    </div>
                             <input type="submit" value="Submit" class="btn btn-primary">
                         </form>
                     </div>

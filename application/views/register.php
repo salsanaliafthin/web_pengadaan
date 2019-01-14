@@ -54,7 +54,7 @@
                         <input class="form-control form-control-lg" name="email" type="text" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <select name="jabatankudupersisngdb" class="form-control" id="">
+                        <select name="jabatanpersisngdb" class="form-control" id="">
                             <option value="Japabatan1">Jabatan 1</option>
                             <option value="Japabatan2">Jabatan 2</option>
                             <option value="Japabatan3">Jabatan 3</option>
