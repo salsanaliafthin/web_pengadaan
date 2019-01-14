@@ -42,6 +42,7 @@
                     </div>
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="name" type="text" placeholder="Nama Lengkap" autocomplete="off">
+                    </div>
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="username" type="text" placeholder="Username" autocomplete="off">
                     </div>
@@ -50,14 +51,14 @@
                         <input class="form-control form-control-lg" name="password" type="password" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" name="email" type="text" placeholder="Your Email">
+                        <input class="form-control form-control-lg" name="email" type="text" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <select name="jabatankudupersisngdb" class="form-control" id="">
-                            <option value="Japabatan1">Kabatan21</option>
-                            <option value="Japabatan2">Kabatan</option>
-                            <option value="Japabatan3">Kabatan3</option>
-                            <option value="Japabatan4">Kabatan4</option>
+                            <option value="Japabatan1">Jabatan 1</option>
+                            <option value="Japabatan2">Jabatan 2</option>
+                            <option value="Japabatan3">Jabatan 3</option>
+                            <option value="Japabatan4">Jabatan 4</option>
                         </select>
                     </div>
                     <div class="form-group">
