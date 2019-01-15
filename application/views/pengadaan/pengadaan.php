@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">TAMBAH PEGAWAI</h2>
+                            <h2 class="pageheader-title">LIST PENGADAAN</h2>
                             <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
@@ -36,33 +36,38 @@
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
+                            <h5 class="card-header">PENGADAAN</h5>
                             <div class="card-body">
-                                <form action="" method="post">
-                                    <?php echo validation_errors(); ?>
-                                    <div class="form-group">
-                                    <label for="">Nama</label>
-                                    <input type="text" name="nama" class="form-control">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered first">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama Kontrak</th>
+                                                <th>Tanggal</th>
+                                                <th>Nomor</th>
+                                                <th>Insiator</th>
+                                                <th>Penandatanganan</th>
+                                                <th>Nilai Kontrak</th>
+                                                <th>Cara Pembayaran</th>
+                                                <th>Jangka waktu</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama Kontrak</th>
+                                                <th>Tanggal</th>
+                                                <th>Nomor</th>
+                                                <th>Insiator</th>
+                                                <th>Penandatanganan</th>
+                                                <th>Nilai Kontrak</th>
+                                                <th>Cara Pembayaran</th>
+                                                <th>Jangka waktu</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="">npp</label>
-                                    <input type="text" name="npp" class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="">email</label>
-                                    <input type="text" name="email" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">username</label>
-                                    <input type="text" name="username" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">password</label>
-                                    <input type="text" name="password" class="form-control">
-                                </div>
-                                <input type="submit" value="Submit" class="btn btn-primary">
-                                </form>
                             </div>
                         </div>
                     </div>

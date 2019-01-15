@@ -173,10 +173,10 @@
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="pages/general-table.html">Detail Pengadaan Barang</a>
+                                            <a class="nav-link" href="<?php echo site_url('Pengadaan') ?>">List Pengadaan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo site_url('Pengadaan') ?>">Tambah Data</a>
+                                            <a class="nav-link" href="<?php echo site_url('Pengadaan/tambah') ?>">Tambah Data</a>
                                         </li>
                                     </ul>
                                 </div>
