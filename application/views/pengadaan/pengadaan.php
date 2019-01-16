@@ -45,7 +45,7 @@
                                                 <th>No</th>
                                                 <th>Nama Kontrak</th>
                                                 <th>Tanggal</th>
-                                                <th>Nomor</th>
+                                                <th>Nomor Kontrak</th>
                                                 <th>Insiator</th>
                                                 <th>Penandatanganan</th>
                                                 <th>Nilai Kontrak</th>
@@ -58,7 +58,7 @@
                                                 <th>No</th>
                                                 <th>Nama Kontrak</th>
                                                 <th>Tanggal</th>
-                                                <th>Nomor</th>
+                                                <th>Nomor Kontrak</th>
                                                 <th>Insiator</th>
                                                 <th>Penandatanganan</th>
                                                 <th>Nilai Kontrak</th>
