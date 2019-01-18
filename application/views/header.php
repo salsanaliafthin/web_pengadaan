@@ -155,31 +155,7 @@
                                 <a class="nav-link active" href="<?php echo site_url('Dashboard') ?>"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Pegawai</a>
-                                <div id="submenu-4" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo site_url('Pegawai') ?>">List Pegawai</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo site_url('Pegawai/tambah') ?>">Tambah Pegawai</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Data Pengadaan</a>
-                                <div id="submenu-5" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo site_url('Pengadaan') ?>">List Pengadaan</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="<?php echo site_url('Pengadaan/tambah') ?>">Tambah Data</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a class="nav-link" href="<?php echo site_url('Pengadaan/tambah') ?>"><i class="fas fa-fw fa-table"></i>Tambah Data <span class="badge badge-success">6</span></a>
                             </li>
                         </ul>
                     </div>

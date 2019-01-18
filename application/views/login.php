@@ -52,12 +52,6 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
                 </form>
             </div>
-            <div class="card-footer bg-white p-0  text-center ">
-                <div class="card-footer-item card-footer-item-bordered ">
-                    <a href="<?php echo site_url('Register');?>" class="footer-link" >Register</a></div>
-                
-                </div>
-            </div>
         </div>
     </div>
   

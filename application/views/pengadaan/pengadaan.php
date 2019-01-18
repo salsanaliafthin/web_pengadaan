@@ -43,27 +43,21 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Nomor Kontrak</th>
                                                 <th>Nama Kontrak</th>
                                                 <th>Tanggal</th>
-                                                <th>Nomor Kontrak</th>
                                                 <th>Insiator</th>
-                                                <th>Penandatanganan</th>
-                                                <th>Nilai Kontrak</th>
-                                                <th>Cara Pembayaran</th>
-                                                <th>Jangka waktu</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Nomor Kontrak</th>
                                                 <th>Nama Kontrak</th>
                                                 <th>Tanggal</th>
-                                                <th>Nomor Kontrak</th>
                                                 <th>Insiator</th>
-                                                <th>Penandatanganan</th>
-                                                <th>Nilai Kontrak</th>
-                                                <th>Cara Pembayaran</th>
-                                                <th>Jangka waktu</th>
+                                                <th>Status</th>
                                             </tr>
                                         </tfoot>
                                     </table>

@@ -29,8 +29,16 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="">Sub Nama</label>
+                                <button class="btn btn-primary ml-3 btn-sm" onclick="add_subnama(); return false;"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <div class="" id='container-subnama'>
+
+                            </div>
+
+                            <div class="form-group">
                                 <label for="">Tanggal</label>
-                                <input type="date" name="tanggal" class="form-control">
+                                <input type="date" name="tanggal" class="form-control" value="<?php echo date('Y-m-d') ?>">
                             </div>
 
                             <div class="form-group">
@@ -49,26 +57,108 @@
                             <div class="form-group">
                                 <label for="">Penandatanganan</label>
                                 <button class="btn btn-primary ml-3 btn-sm" onclick="add_penandatanganan(); return false;"><i class="fas fa-plus"></i></button>
+                                 <div class="card-body">
+                           <div class="form-group row">
+                                <label class="col-md-2">Nama Perseroan</label>
+                               <input type="text" class="form-control col-md-2">
+                          </div>
+                <div class="form-group row">
+                    <label class="col-md-2">Perwakilan</label>
+                    <input type="text" class="form-control col-md-2">
+                </div>
                             </div>
                             <div class="row" id='container-penandatangan'>
-                                
+
                             </div>
                             <div class="form-group">
                                 <label for="">Nilai Kontrak</label>
                                 <input type="text" name="Keterangan" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="">Cara Pembayaran</label>
+                                <label for="">Cara Pembayaran:</label>
                             </div>
                             <div class="form-group">
-                        <select name="jabatanpersisngdb" class="form-control" id="">
-                            <option value="cp1">Langsung</option>
-                            <option value="cp2">Per Termin</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                                <label for="">Jangka Waktu</label>
+                                <div class="custom-control custom-radio">
+                                  <input type="radio"  checked id="carapembayaran1" name="carapembayaran" class="custom-control-input" value="langsung">
+                                  <label class="custom-control-label" for="carapembayaran1">Langsung</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" id="carapembayaran2" name="carapembayaran" class="custom-control-input" value="petermin">
+                                  <label class="custom-control-label" for="carapembayaran2">Pertermin</label>
+                                  <div class="input-group ml-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-success btn-xs" onclick="petermin_plus();" type="button" id="button-peterminplus"><li class="fa fa-plus"></li></button>
+                                    </div>
+                                    <input type="number" class="form-control form-xs" value="0" max="100" min="0" id="input-petermin">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-danger btn-xs"  onclick="petermin_minus();" type="button" id="button-peterminminus"><li class="fa fa-minus"></li></button>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Jangka Waktu</label>
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-md-3">Pelaksanaan</label>
+                            <div class="col-md-3"> 
+                                <input type="date" class="form-control" name="pelaksanaan_from">
+                            </div>
+                            <div class="col-md-1 text-middle"> 
+                                <input type="text" readonly value="sd" class="form-control-plaintext">
+                            </div>
+                            <div class="col-md-3"> 
+                                <input type="date" class="form-control" name="pelaksanaan_to">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-md-3">Pemeliharaan</label>
+                            <div class="col-md-3"> 
+                                <input type="date" class="form-control" name="pelaksanaan_from">
+                            </div>
+                            <div class="col-md-1 text-middle"> 
+                                <input type="text" readonly value="sd" class="form-control-plaintext">
+                            </div>
+                            <div class="col-md-3"> 
+                                <input type="date" class="form-control" name="pelaksanaan_to">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-md-3">Garansi Jaminan</label>
+                            <div class="col-md-3"> 
+                                <input type="date" class="form-control" name="pelaksanaan_from">
+                            </div>
+                            <div class="col-md-1 text-middle"> 
+                                <input type="text" readonly value="sd" class="form-control-plaintext">
+                            </div>
+                            <div class="col-md-3"> 
+                                <input type="date" class="form-control" name="pelaksanaan_to">
+                            </div>
+                        </div>
+
+                           <!--  dijumlah full itu harus 12
+                            111111111111
+                            kalau mau di bagi dua
+                            6 6
+                            kalau mau di bagi 3 
+                            4 4 4
+                            kalau mau besar sebelah
+                            8 4
+
+                            pokok jumlah e harus 12 kalau full layar
+                            kalau cuman setengah layar tinggal 
+
+                            6 aja
+
+                            nah di case kita 
+
+                            5   3 1 3
+                            jadi kalau di kurangi pelaksanaan nya gimana? halo? areyouhearme?
+                            yah mencoba mudeng
+                            jadi kita kurangi pelaksanaan nya kan pelaksanaan 5 -->
+
                             <input type="submit" value="Submit" class="btn btn-primary">
                         </form>
                     </div>
@@ -98,24 +188,58 @@
 </div>
 <div class="fade" id="sample-penandatanganan">
     <div class="col-md-4" id="form-penandatanganan">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="form-group row">
-                                                <label class="col-md-6">Nama Perseroan</label>
-                                                <input type="text" class="form-control col-md-6">
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-6">Perwakilan</label>
-                                                <input type="text" class="form-control col-md-6">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group row">
+                    <label class="col-md-6">Nama Perseroan</label>
+                    <input type="text" class="form-control col-md-6">
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-6">Perwakilan</label>
+                    <input type="text" class="form-control col-md-6">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fade" id="sample-subnama">
+    <div class="form-group row">
+        <div class="col-md-1"></div>
+        <label class="col-md-3">Nama Sub Kontrak</label>
+        <input type="text" class="form-control col-md-4">
+    </div>
 </div>
 <?php $this->load->view('footer') ?>
 <script>
-    function add_penandatanganan() {
-        var sample = $('#sample-penandatanganan').html();
-        $('#container-penandatangan').append(sample);
-            }
+function add_penandatanganan() {
+    var sample = $('#sample-penandatanganan').html();
+    $('#container-penandatangan').append(sample);
+}
+function add_subnama() {
+    var sample = $('#sample-subnama').html();
+    $('#container-subnama').append(sample);
+}
+
+function petermin_plus() {
+    var val = parseInt($('#input-petermin').val());
+    val++;
+    if (val >= 100) {
+        val = 100;
+    }
+    if (val <= 0) {
+        val = 0;
+    }
+    $('#input-petermin').val(val);
+}
+function petermin_minus() {
+    var val = parseInt($('#input-petermin').val());
+    val--;
+    if (val >= 100) {
+        val = 100;
+    }
+    if (val <= 0) {
+        val = 0;
+    }
+    $('#input-petermin').val(val);
+}
 </script>
