@@ -55,8 +55,25 @@
                                                 <th>Tanggal</th>
                                                 <th>Insiator</th>
                                                 <th>Status</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
+                                        <tbody>
+                                            <?php foreach ($kontrak as $key => $value): ?>
+                                                <tr>
+                                                    <td><?php echo ++$key ?></td>
+                                                    <td><?php echo $value->nomor ?></td>
+                                                    <td><?php echo $value->nama ?></td>
+                                                    <td><?php echo $value->tanggal ?></td>
+                                                    <td><?php echo $value->inisiator ?></td>
+                                                    <td><?php echo $value->status ?></td>
+                                                    <td>
+                                                        <a href="<?php echo site_url('Dashboard/detail/'.$value->id) ?>" class="btn btn-info btn-sm">Detail</a>
+                                                        <a href="<?php echo site_url('Dashboard/delete/'.$value->id) ?>" onclick="confirm('apakah anda yakin?')" class="btn btn-danger btn-sm">Hapus</a>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach ?>
+                                        </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
@@ -65,6 +82,7 @@
                                                 <th>Tanggal</th>
                                                 <th>Insiator</th>
                                                 <th>Status</th>
+                                                <th></th>
                                             </tr>
                                         </tfoot>
                                     </table>

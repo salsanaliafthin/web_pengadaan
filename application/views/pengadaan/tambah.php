@@ -43,36 +43,20 @@
 
                             <div class="form-group">
                                 <label for="">Nomor</label>
-                                <input type="text" name="nomer" class="form-control">
+                                <input type="text" name="nomor" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Inisiator</label>
                                 <select name="inisiator" id="" class="form-control">
-                                    <option value="">Jabatan 1</option>
-                                    <option value="">Jabatan 2</option>
-                                    <option value="">Jabatan 3</option>
-                                    <option value="">Jabatan 4</option>
+                                    <option>Jabatan 1</option>
+                                    <option>Jabatan 2</option>
+                                    <option>Jabatan 3</option>
+                                    <option>Jabatan 4</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Penandatanganan</label>
-                                <button class="btn btn-primary ml-3 btn-sm" onclick="add_penandatanganan(); return false;"><i class="fas fa-plus"></i></button>
-                                 <div class="card-body">
-                           <div class="form-group row">
-                                <label class="col-md-2">Nama Perseroan</label>
-                               <input type="text" class="form-control col-md-2">
-                          </div>
-                <div class="form-group row">
-                    <label class="col-md-2">Perwakilan</label>
-                    <input type="text" class="form-control col-md-2">
-                </div>
-                            </div>
-                            <div class="row" id='container-penandatangan'>
-
-                            </div>
-                            <div class="form-group">
                                 <label for="">Nilai Kontrak</label>
-                                <input type="text" name="Keterangan" class="form-control">
+                                <input type="text" name="nilai" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Cara Pembayaran:</label>
@@ -89,7 +73,7 @@
                                     <div class="input-group-prepend">
                                         <button class="btn btn-success btn-xs" onclick="petermin_plus();" type="button" id="button-peterminplus"><li class="fa fa-plus"></li></button>
                                     </div>
-                                    <input type="number" class="form-control form-xs" value="0" max="100" min="0" id="input-petermin">
+                                    <input type="number" name="petermin" class="form-control form-xs" value="0" max="100" min="0" id="input-petermin">
                                     <div class="input-group-append">
                                         <button class="btn btn-danger btn-xs"  onclick="petermin_minus();" type="button" id="button-peterminminus"><li class="fa fa-minus"></li></button>
                                     </div>
@@ -97,6 +81,13 @@
                             </div>
                         </div>
 
+                            <div class="form-group">
+                                <label for="">Penandatanganan</label>
+                                <button class="btn btn-primary ml-3 btn-sm" onclick="add_penandatanganan(); return false;"><i class="fas fa-plus"></i></button>
+                                
+                            <div class="row" id='container-penandatangan'>
+
+                            </div>
                         <div class="form-group">
                             <label for="">Jangka Waktu</label>
 
@@ -116,48 +107,41 @@
                         <div class="form-group row">
                             <label for="" class="col-md-3">Pemeliharaan</label>
                             <div class="col-md-3"> 
-                                <input type="date" class="form-control" name="pelaksanaan_from">
+                                <input type="date" class="form-control" name="pemeliharaan_from">
                             </div>
                             <div class="col-md-1 text-middle"> 
                                 <input type="text" readonly value="sd" class="form-control-plaintext">
                             </div>
                             <div class="col-md-3"> 
-                                <input type="date" class="form-control" name="pelaksanaan_to">
+                                <input type="date" class="form-control" name="pemeliharaan_to">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-md-3">Garansi Jaminan</label>
                             <div class="col-md-3"> 
-                                <input type="date" class="form-control" name="pelaksanaan_from">
+                                <input type="date" class="form-control" name="garansijaminan_from">
                             </div>
                             <div class="col-md-1 text-middle"> 
                                 <input type="text" readonly value="sd" class="form-control-plaintext">
                             </div>
                             <div class="col-md-3"> 
-                                <input type="date" class="form-control" name="pelaksanaan_to">
+                                <input type="date" class="form-control" name="garansijaminan_to">
                             </div>
                         </div>
-
-                           <!--  dijumlah full itu harus 12
-                            111111111111
-                            kalau mau di bagi dua
-                            6 6
-                            kalau mau di bagi 3 
-                            4 4 4
-                            kalau mau besar sebelah
-                            8 4
-
-                            pokok jumlah e harus 12 kalau full layar
-                            kalau cuman setengah layar tinggal 
-
-                            6 aja
-
-                            nah di case kita 
-
-                            5   3 1 3
-                            jadi kalau di kurangi pelaksanaan nya gimana? halo? areyouhearme?
-                            yah mencoba mudeng
-                            jadi kita kurangi pelaksanaan nya kan pelaksanaan 5 -->
+                        <div class="form-group">
+                                <label for="">Keterangan</label>
+                                <textarea name="keterangan" class="form-control"></textarea>
+                            </div>
+                        <div class="form-group">
+                                <label for="">Status</label>
+                                <select name="status" class="form-control">
+                                    <option>Drafting
+                                    <option>On Progress</option>
+                                    <option>Signing</option>
+                                    <option>On Going</option>
+                                    <option>Done</option>
+                                </select>
+                            </div>
 
                             <input type="submit" value="Submit" class="btn btn-primary">
                         </form>
@@ -192,11 +176,11 @@
             <div class="card-body">
                 <div class="form-group row">
                     <label class="col-md-6">Nama Perseroan</label>
-                    <input type="text" class="form-control col-md-6">
+                    <input type="text" name="namaperseroan[]" class="form-control col-md-6">
                 </div>
                 <div class="form-group row">
                     <label class="col-md-6">Perwakilan</label>
-                    <input type="text" class="form-control col-md-6">
+                    <input type="text" name="perwakilan[]" class="form-control col-md-6">
                 </div>
             </div>
         </div>
@@ -206,7 +190,7 @@
     <div class="form-group row">
         <div class="col-md-1"></div>
         <label class="col-md-3">Nama Sub Kontrak</label>
-        <input type="text" class="form-control col-md-4">
+        <input type="text" name="subkontrak[]" class="form-control col-md-4">
     </div>
 </div>
 <?php $this->load->view('footer') ?>
