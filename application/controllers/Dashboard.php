@@ -60,20 +60,5 @@ class Dashboard extends CI_Controller {
 		$this->load->view('detail_kontrak',$data);
 	}
 
-	public function delete($id)
-	{
-		#delete kontrak_sub
-		$this->db->where('fk_kontrak',$id);
-		$this->db->delete('kontrak_sub');
-
-		#delete kontrak_penandatanganan
-		$this->db->where('fk_kontrak',$id);
-		$this->db->delete('kontrak_penandatanganan');
-
-		#delete kontrak
-		$this->db->where('id',$id);
-		$this->db->delete('kontrak');
-
-		redirect('Dashboard','refresh');
-	}
+	
 }

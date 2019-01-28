@@ -17,7 +17,9 @@
         height: 100%;
     }
 
+
     body {
+
         display: -ms-flexbox;
         display: flex;
         -ms-flex-align: center;
@@ -28,7 +30,7 @@
     </style>
 </head>
 
-<body>
+<body background="homelogin.jpg;">
     <!-- ============================================================== -->
     <!-- login page  -->
     <!-- ============================================================== -->

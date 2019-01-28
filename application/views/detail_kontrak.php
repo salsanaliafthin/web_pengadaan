@@ -53,13 +53,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Inisiator</label>
-                                <select name="inisiator" id="" class="form-control" disabled>
-                                    <option>Jabatan 1</option>
-                                    <option>Jabatan 2</option>
-                                    <option>Jabatan 3</option>
-                                    <option>Jabatan 4</option>
-                                </select>
-                                <script>$('select[name="inisiator"]').val('<?php echo $kontrak->inisiator ?>')</script>
+                                <input type="text" class="form-control" value="<?php echo $value->inisiator_nama." ".$value->inisiator_devisi ?>">
                             </div>
                             <div class="form-group">
                                 <label for="">Nilai Kontrak</label>

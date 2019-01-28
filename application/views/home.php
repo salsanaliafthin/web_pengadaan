@@ -23,6 +23,10 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('assets_home/') ?>css/creative.min.css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/') ?>assets/vendor/datatables/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/') ?>assets/vendor/datatables/css/buttons.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/') ?>assets/vendor/datatables/css/select.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/') ?>assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
 
   </head>
 
@@ -55,12 +59,12 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Your Favorite Source of Free Bootstrap Themes</strong>
+              <strong>PORTAL PENGADAAN</strong>
             </h1>
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+            <p class="text-faded mb-5"> PT. Jasa Marga Surabaya Mojokerto</p>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">LIST PENGADAAN</a>
           </div>
         </div>
@@ -106,6 +110,29 @@
                                                 <th>Status</th>
                                             </tr>
                                         </thead>
+                                        <tbody>
+                                            <?php foreach ($this->db->get('kontrak')->result() as $key => $value): ?>
+                                                <?php 
+                                                $date1 = new DateTime(date('Y-m-d'));
+$date2 = new DateTime($value->tanggal);
+$interval = $date1->diff($date2);
+if ($date1 > $date2) {
+    $month = $interval->m;
+}else{
+    $month = 0;
+}
+
+ ?>
+                                                <tr class="<?php echo ($month >= 1 ? "bg-primary" : "") ?>">
+                                                    <td><?php echo ++$key ?></td>
+                                                    <td><?php echo $value->nomor; ?></td>
+                                                    <td><?php echo $value->nama; ?></td>
+                                                    <td><?php echo $value->tanggal; ?></td>
+                                                    <td><?php echo $value->inisiator_nama." ".$value->inisiator_devisi; ?></td>
+                                                    <td><?php echo $value->status; ?></td>
+                                                </tr>
+                                            <?php endforeach ?>
+                                        </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
@@ -134,18 +161,18 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading">Let's Get In Touch!</h2>
             <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+            <p class="mb-5">Gedung MNA Jl. Raya Taman, Plaza Tol Waru I & Ramp Sidoarjo 61257</p>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-4 ml-auto text-center">
             <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-            <p>123-456-6789</p>
+            <p>(031) 7879994</p>
           </div>
           <div class="col-lg-4 mr-auto text-center">
             <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
             <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+              <a href="mailto:your-email@your-domain.com">info@tolsumo.com</a>
             </p>
           </div>
         </div>
@@ -160,7 +187,11 @@
     <script src="<?php echo base_url('assets_home/') ?>vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="<?php echo base_url('assets_home/') ?>vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="<?php echo base_url('assets_home/') ?>vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url('assets/') ?>assets/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="<?php echo base_url('assets/') ?>assets/vendor/datatables/js/buttons.bootstrap4.min.js"></script>
+     <script src="<?php echo base_url('assets/') ?>assets/vendor/datatables/js/data-table.js"></script>
     <!-- Custom scripts for this template -->
     <script src="<?php echo base_url('assets_home/') ?>js/creative.min.js"></script>
 

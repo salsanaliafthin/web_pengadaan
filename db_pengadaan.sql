@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2019 at 03:05 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Generation Time: Jan 28, 2019 at 10:11 PM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,7 +33,8 @@ CREATE TABLE `kontrak` (
   `nama` varchar(20) NOT NULL,
   `tanggal` date NOT NULL,
   `nomor` int(11) NOT NULL,
-  `inisiator` varchar(100) NOT NULL,
+  `inisiator_nama` varchar(100) NOT NULL,
+  `inisiator_devisi` varchar(100) NOT NULL,
   `nilai` int(11) NOT NULL,
   `carapembayaran` varchar(50) NOT NULL,
   `pelaksanaan_from` date NOT NULL,
@@ -50,8 +51,12 @@ CREATE TABLE `kontrak` (
 -- Dumping data for table `kontrak`
 --
 
-INSERT INTO `kontrak` (`id`, `nama`, `tanggal`, `nomor`, `inisiator`, `nilai`, `carapembayaran`, `pelaksanaan_from`, `pelaksanaan_to`, `pemeliharaan_from`, `pemeliharaan_to`, `garansijaminan_from`, `garansijaminan_to`, `keterangan`, `status`) VALUES
-(1, 'Perbaikan CCTV', '2019-01-24', 12345667, 'Jabatan 2', 1234454545, 'petermin 8%', '2019-01-21', '2019-01-31', '2019-01-04', '2019-01-12', '2019-01-01', '2019-01-08', 'lebih baik', 'Status 1');
+INSERT INTO `kontrak` (`id`, `nama`, `tanggal`, `nomor`, `inisiator_nama`, `inisiator_devisi`, `nilai`, `carapembayaran`, `pelaksanaan_from`, `pelaksanaan_to`, `pemeliharaan_from`, `pemeliharaan_to`, `garansijaminan_from`, `garansijaminan_to`, `keterangan`, `status`) VALUES
+(3, 'Perbaikan Jalan', '2019-01-27', 2345, '', '', 987654, 'langsung', '2019-01-02', '2019-01-04', '2019-01-07', '2019-01-11', '2019-01-20', '2019-01-25', 'lkjhgfd', 'Drafting'),
+(4, 'Perbaikan CCTV', '2019-02-28', 1234, 'salsa', 'manager sdm', 1000000, 'petermin 10%', '2019-03-27', '2019-02-02', '2019-02-03', '2019-02-09', '2019-02-10', '2019-02-16', 'oke', 'On Progress'),
+(5, 'Perbaikan CCTV', '2019-03-27', 1234, 'salsa', 'manager sdm', 1000000, 'petermin 10%', '2018-12-27', '2019-02-02', '2019-02-03', '2019-02-09', '2019-02-10', '2019-02-16', 'oke', 'On Progress'),
+(6, '1', '0001-01-01', 1, '1', '1', 1, 'petermin', '0001-01-01', '0001-01-01', '0001-01-01', '0001-01-01', '0001-01-01', '0001-01-01', '1', 'Drafting'),
+(7, '1', '0001-01-01', 1, '1', '1', 1, 'petermin', '0001-01-01', '0001-01-01', '0001-01-01', '0001-01-01', '0001-01-01', '0001-01-01', '1', 'Drafting');
 
 -- --------------------------------------------------------
 
@@ -71,9 +76,51 @@ CREATE TABLE `kontrak_penandatanganan` (
 --
 
 INSERT INTO `kontrak_penandatanganan` (`id`, `fk_kontrak`, `nama_perseroan`, `nama_perwakilan`) VALUES
-(1, 1, 'PT ABC', 'aul'),
-(2, 1, 'PT JSM', 'sasa'),
-(3, 1, 'PT BLABLA', 'njok');
+(7, 3, 'PT ABC', 'sem'),
+(8, 3, 'PT TRE', 'njok'),
+(9, 3, 'PT QWE', 'Aldan'),
+(10, 3, '', ''),
+(11, 3, '', ''),
+(12, 3, '', ''),
+(13, 3, '', ''),
+(14, 3, '', ''),
+(15, 3, '', ''),
+(16, 3, '', ''),
+(17, 3, '', ''),
+(18, 3, '', ''),
+(19, 3, '', ''),
+(20, 3, '', ''),
+(21, 3, '', ''),
+(22, 3, '', ''),
+(23, 3, '', ''),
+(24, 3, '', ''),
+(25, 4, 'PT ABC', 'aul'),
+(26, 4, 'PT BCD', 'njok'),
+(27, 5, 'PT ABC', 'aul'),
+(28, 5, 'PT BCD', 'njok');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kontrak_petermin`
+--
+
+CREATE TABLE `kontrak_petermin` (
+  `id` int(11) NOT NULL,
+  `fk_kontrak` int(11) NOT NULL,
+  `petermin` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kontrak_petermin`
+--
+
+INSERT INTO `kontrak_petermin` (`id`, `fk_kontrak`, `petermin`) VALUES
+(1, 7, 1),
+(2, 7, 1),
+(3, 7, 1),
+(4, 7, 1),
+(5, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -92,9 +139,17 @@ CREATE TABLE `kontrak_sub` (
 --
 
 INSERT INTO `kontrak_sub` (`id`, `fk_kontrak`, `nama`) VALUES
-(1, 1, 'CCTV Mojokerto'),
-(2, 1, 'CCTV Pandaan'),
-(3, 1, 'CCTV Surabaya');
+(7, 3, 'waru 1'),
+(8, 3, 'waru 2'),
+(9, 3, 'waru 3'),
+(10, 4, 'CCTV Waru'),
+(11, 4, 'CCTV malang'),
+(12, 4, 'CCTV Surabaya'),
+(13, 5, 'CCTV Waru'),
+(14, 5, 'CCTV malang'),
+(15, 5, 'CCTV Surabaya'),
+(16, 6, '1'),
+(17, 7, '1');
 
 -- --------------------------------------------------------
 
@@ -137,6 +192,13 @@ ALTER TABLE `kontrak_penandatanganan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `kontrak_petermin`
+--
+ALTER TABLE `kontrak_petermin`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_kontrak` (`fk_kontrak`);
+
+--
 -- Indexes for table `kontrak_sub`
 --
 ALTER TABLE `kontrak_sub`
@@ -156,19 +218,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `kontrak`
 --
 ALTER TABLE `kontrak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `kontrak_penandatanganan`
 --
 ALTER TABLE `kontrak_penandatanganan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `kontrak_petermin`
+--
+ALTER TABLE `kontrak_petermin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kontrak_sub`
 --
 ALTER TABLE `kontrak_sub`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user`
