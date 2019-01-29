@@ -74,8 +74,8 @@ data = {
         data: <?php echo $data ?>,
         backgroundColor: [
                 'rgba(255, 99, 132, 0.5)', //editen wana e ada 5 juga 1 2 3 4 5 6 6 
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(66, 134, 244, 0.5)',
+                'rgba(67, 210, 239, 0.5)',
+                'rgba(138, 255, 84, 0.5)',
                 'rgba(208, 89, 255, 0.5)',
                 'rgba(255, 125, 89, 0.5)', //
                 ],

@@ -115,13 +115,4 @@
                 <!-- ============================================================== -->
                 <!-- end footer -->
                 <!-- ============================================================== -->
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Accounts Payable Age</h5>
-                                <div class="card-body">
-                                    <canvas id="myChart" width="400" height="400"></canvas>
-                                </div>
-                            </div>
-                        </div>  
-            </div>
             <?php $this->load->view('footer') ?>

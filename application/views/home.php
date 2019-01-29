@@ -78,9 +78,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <h2 class="section-heading">CHART PENGADAAN</h2>
             <hr class="my-4">
-            <p class="mb-5">Gedung MNA Jl. Raya Taman, Plaza Tol Waru I & Ramp Sidoarjo 61257</p>
           </div>
         </div>
         <div class="row">

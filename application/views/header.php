@@ -155,11 +155,15 @@
                                 PANEL ADMIN
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="<?php echo site_url('Dashboard') ?>"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <a class="nav-link active" href="<?php echo site_url('Dashboard') ?>"><i class="fa fa-fw fa-table"></i>Dashboard <span class="badge badge-success">6</span></a>
+                            </li>
+                             <li class="nav-item ">
+                                <a class="nav-link" href="<?php echo site_url('Chart') ?>"><i class="fas fa-chart-pie"></i>Chart <span class="badge badge-success">6</span></a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="<?php echo site_url('Pengadaan/tambah') ?>"><i class="fas fa-fw fa-table"></i>Tambah Data <span class="badge badge-success">6</span></a>
+                                <a class="nav-link" href="<?php echo site_url('Pengadaan/tambah') ?>"><i class="fas fa-plus-square"></i>Tambah Data <span class="badge badge-success">6</span></a>
                             </li>
+
                         </ul>
                     </div>
                 </nav>
