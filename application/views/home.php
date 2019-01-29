@@ -48,10 +48,8 @@
               <a class="nav-link js-scroll-trigger" href="#about">List Pengadaan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Address</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Login') ?>">Login</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -74,7 +72,7 @@
       </div>
     </header>
 
-    <section id="chart">
+    <section class="bg-primary" id="chart">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
@@ -83,23 +81,22 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 mx-auto text-center">
+          <div class="col-lg-5 mx-auto text-center">
                                     <canvas id="myChart" width="100%" height="100%"></canvas>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="bg-primary" id="about">
+    <section id="about" class="bg-dark text-dark">
      <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11 mx-auto text-center"  >
                         <div class="page-header">
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
                                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Data Tables</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -113,9 +110,10 @@
                     <!-- ============================================================== -->
                     <!-- basic table  -->
                     <!-- ============================================================== -->
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11 mx-auto text-center"  >
+                    
                         <div class="card">
-                            <h5 class="card-header">PENGADAAN</h5>
+    
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered first">
@@ -133,15 +131,14 @@
                                             <?php foreach ($this->db->get('kontrak')->result() as $key => $value): ?>
                                                 <?php 
                                                 $date1 = new DateTime(date('Y-m-d'));
-$date2 = new DateTime($value->tanggal);
-$interval = $date1->diff($date2);
-if ($date1 > $date2) {
-    $month = $interval->m;
-}else{
-    $month = 0;
-}
-
- ?>
+                                                $date2 = new DateTime($value->tanggal);
+                                                $interval = $date1->diff($date2);
+                                                if ($date1 > $date2) {
+                                                    $month = $interval->m;
+                                                }else{
+                                                   $month = 0;
+                                               }
+                                                ?>
                                                 <tr class="<?php echo ($month >= 1 ? "bg-primary" : "") ?>">
                                                     <td><?php echo ++$key ?></td>
                                                     <td><?php echo $value->nomor; ?></td>
@@ -173,29 +170,6 @@ if ($date1 > $date2) {
                 </div>
                 
             </div>
-    </section>
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Gedung MNA Jl. Raya Taman, Plaza Tol Waru I & Ramp Sidoarjo 61257</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-            <p>(031) 7879994</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">info@tolsumo.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Bootstrap core JavaScript -->

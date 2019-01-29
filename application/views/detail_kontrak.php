@@ -53,7 +53,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Inisiator</label>
-                                <input type="text" class="form-control" value="<?php echo $value->inisiator_nama." ".$value->inisiator_devisi ?>">
+                                <input type="text" class="form-control" value="<?php echo $kontrak->inisiator_nama." ".$kontrak->inisiator_devisi ?>">
                             </div>
                             <div class="form-group">
                                 <label for="">Nilai Kontrak</label>
