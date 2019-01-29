@@ -130,16 +130,17 @@
                                         <tbody>
                                             <?php foreach ($this->db->get('kontrak')->result() as $key => $value): ?>
                                                 <?php 
-                                                $date1 = new DateTime(date('Y-m-d'));
-                                                $date2 = new DateTime($value->tanggal);
-                                                $interval = $date1->diff($date2);
-                                                if ($date1 > $date2) {
-                                                    $month = $interval->m;
-                                                }else{
-                                                   $month = 0;
-                                               }
-                                                ?>
-                                                <tr class="<?php echo ($month >= 1 ? "bg-primary" : "") ?>">
+                                                        $date1 = new DateTime(date('Y-m-d'));
+                                                        $date2 = new DateTime($value->pelaksanaan_to); // patokan tanggal
+                                                        $interval = $date1->diff($date2);
+                                                        if ($date1 < $date2) {
+                                                            $month = $interval->m;
+                                                        }else{
+                                                            $month = -1;
+                                                        }
+
+                                                        ?>
+                                                        <tr class="<?php echo ($month == 0 ? "bg-danger text-white" : "") ?>">
                                                     <td><?php echo ++$key ?></td>
                                                     <td><?php echo $value->nomor; ?></td>
                                                     <td><?php echo $value->nama; ?></td>

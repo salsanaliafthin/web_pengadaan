@@ -84,7 +84,7 @@
                                 <label for="">Nilai Kontrak</label>
                                 <div class="input-group col-md-6 col-lg-5">
                                     <input type="text" disabled="" class="form-control col-md-4" value="Nilai">
-                                    <input type="text" name="nilai" class="form-control col-md-8">
+                                    <input type="text" id="input-nilai" name="nilai" class="form-control col-md-8">
                                 </div>
                                 <div id="container-pajak" style="display: none;">
                                 <div class="input-group col-md-6 col-lg-5">
@@ -247,8 +247,22 @@
 <div class="fade" id="sample-petermin">
     <div class="form-group row">
         <div class="col-md-1"></div>
-        <label class="col-md-2">Petermin <span id="nopetermin">1</span></label>
-        <input type="number" value="0" min="1" max="99" name="petermin[]" class="form-control col-md-2">
+        <label class="col-md-12">Petermin <span id="nopetermin">1</span></label>
+        <div class="input-group col-md-3">
+
+        <input type="number" value="0" class="form-control petermin-nominal">
+        <input type="text" value="0" id="" min="1" max="99" name="petermin[]" class="form-control col-md-2 petermin-persen" readonly=""><div class="input-group-append">
+    <span class="input-group-text">%</span>
+  </div>
+    </div>
+    <script>
+        $('.petermin-nominal').change(function(){
+            var nominal = parseInt($('#input-nilai').val());
+            var petermin_nominal = parseInt($(this).val());
+            var petermin_persen = (petermin_nominal/nominal) * 100;
+            $(this).parent().find(".petermin-persen").val(petermin_persen);
+        });
+    </script>
     </div>
 </div>
 <?php $this->load->view('footer') ?>

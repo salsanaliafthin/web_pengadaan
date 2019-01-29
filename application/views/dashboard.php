@@ -67,11 +67,11 @@
                                                         if ($date1 < $date2) {
                                                             $month = $interval->m;
                                                         }else{
-                                                            $month = 0;
+                                                            $month = -1;
                                                         }
 
                                                         ?>
-                                                        <tr class="<?php echo ($month >= 1 ? "bg-danger text-white" : "") ?>">
+                                                        <tr class="<?php echo ($month == 0 ? "bg-danger text-white" : "") ?>">
                                                             <td><?php echo ++$key ?></td>
                                                             <td><?php echo $value->nomor ?></td>
                                                             <td><?php echo $value->nama ?></td>
