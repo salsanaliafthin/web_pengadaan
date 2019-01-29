@@ -57,11 +57,36 @@
 
                             </div>
                             <div class="form-group">
+                                <label for="">Pajak:</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-radio">
+                                  <input type="radio"  checked id="pajak1" name="pajak" class="custom-control-input" value="tanpapajak">
+                                  <label class="custom-control-label" for="pajak1">Tanpa Pajak</label>
+                              </div>
+                              <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" id="pajak2" name="pajak" class="custom-control-input" value="denganpajak">
+                                  <label class="custom-control-label" for="pajak2">Dengan Pajak</label>
+                    
+                            </div>
+                            <script>
+                                $("input[name='pajak']").change(function(){
+            var radioValue = $("input[name='pajak']:checked").val();
+            if(radioValue == 'denganpajak'){
+                $('#container-pajak').fadeIn();
+            }else{
+                $('#container-pajak').fadeOut();
+            }
+        });
+                            </script>
+                        </div>
+                            <div class="form-group">
                                 <label for="">Nilai Kontrak</label>
                                 <div class="input-group col-md-6 col-lg-5">
                                     <input type="text" disabled="" class="form-control col-md-4" value="Nilai">
                                     <input type="text" name="nilai" class="form-control col-md-8">
                                 </div>
+                                <div id="container-pajak" style="display: none;">
                                 <div class="input-group col-md-6 col-lg-5">
                                     <input type="text" disabled="" class="form-control col-md-4" value="Pajak">
                                     <input type="text" name="pajak" class="form-control col-md-8" value="10%" disabled="">
@@ -73,14 +98,17 @@
                                 <div class="input-group col-md-6 col-lg-5">
                                     <input type="text" disabled="" class="form-control col-md-4" value="Nilai Total">
                                     <input type="text" name="nilai_total" class="form-control col-md-8" disabled="">
-                                </div>
+                                </div></div>
                                 
                                 <script>
                                     $('input[name="nilai"]').change(function(){
                                         var nilai =  parseInt($(this).val());
-                                        var nilai_pajak = nilai*0.1;
-                                        $('input[name="nilai_pajak"]').val("Rp. "+nilai_pajak);
-                                        $('input[name="nilai_total"]').val("Rp. "+(nilai_pajak+nilai));
+                                        var nilai_pajak = parseInt(nilai*0.1, 10);
+                                        var rp_nilai = String(nilai).replace(/(.)(?=(\d{3})+$)/g,'$1,');
+                                        var nilai_total = nilai + nilai_pajak;
+                                        var rp_nilai_total = String(nilai_total).replace(/(.)(?=(\d{3})+$)/g,'$1,')
+                                        $('input[name="nilai_pajak"]').val("Rp. "+rp_nilai);
+                                        $('input[name="nilai_total"]').val("Rp. "+rp_nilai_total);
                                     });
                                 </script>
                             </div>
@@ -157,7 +185,7 @@
                             <div class="form-group">
                                 <label for="">Status</label>
                                 <select name="status" class="form-control">
-                                    <option>Drafting
+                                    <option>Drafting</option>
                                         <option>On Progress</option>
                                         <option>Signing</option>
                                         <option>On Going</option>
@@ -166,6 +194,7 @@
                                 </div>
 
                                 <input type="submit" value="Submit" class="btn btn-primary">
+                                <form method="post" action="<?php echo site_url('Pengadaan') ?>">
                             </form>
                         </div>
                     </div>

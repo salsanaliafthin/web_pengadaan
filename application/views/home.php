@@ -42,6 +42,9 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#chart">Chart</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">List Pengadaan</a>
             </li>
             <li class="nav-item">
@@ -70,6 +73,23 @@
         </div>
       </div>
     </header>
+
+    <section id="chart">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Gedung MNA Jl. Raya Taman, Plaza Tol Waru I & Ramp Sidoarjo 61257</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mx-auto text-center">
+                                    <canvas id="myChart" width="100%" height="100%"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="bg-primary" id="about">
      <div class="row">
@@ -194,6 +214,80 @@ if ($date1 > $date2) {
      <script src="<?php echo base_url('assets/') ?>assets/vendor/datatables/js/data-table.js"></script>
     <!-- Custom scripts for this template -->
     <script src="<?php echo base_url('assets_home/') ?>js/creative.min.js"></script>
+
+<!-- chartjs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+<?php 
+$this->db->select('status,count(id) as jml');
+$this->db->group_by('status');
+$query = $this->db->get('kontrak');
+$res = $query->result();
+$data = "[";
+$idx = 0;
+for ($i=0; $i < 5; $i++) { 
+    if (($idx+1) <= count($res)) {
+        $value = $res[$idx];
+        if ($value->status == "Drafting") {
+            $data .= $value->jml.",";
+
+            $idx++;
+        }else if ($value->status == "On Progress") {
+            $data .= $value->jml.",";
+
+            $idx++;
+        }else if ($value->status == "Signing") {
+            $data .= $value->jml.",";
+
+            $idx++;
+        }else if ($value->status == "On Going") {
+            $data .= $value->jml.",";
+
+            $idx++;
+        }else if ($value->status == "Done") {
+            $data .= $value->jml.",";
+
+            $idx++;
+        }else{
+            $data .= "0,";
+        }
+    }else{
+        $data .= "0,";
+    }
+    
+
+}
+$data = substr($data, 0,-1);
+$data .= "]";
+?>
+<script>
+data = {
+    datasets: [{
+        data: <?php echo $data ?>,
+        backgroundColor: [
+                'rgba(255, 99, 132, 0.5)', //editen wana e ada 5 juga 1 2 3 4 5 6 6 
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(66, 134, 244, 0.5)',
+                'rgba(208, 89, 255, 0.5)',
+                'rgba(255, 125, 89, 0.5)', //
+                ],
+            }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+    'Drafting',
+    'On progress',
+    'signing',
+    'on going',
+    'done',
+    ],
+    
+};
+var myPieChart = new Chart($('#myChart'),{
+    type: 'pie',
+    data: data,
+});
+</script>
 
   </body>
 

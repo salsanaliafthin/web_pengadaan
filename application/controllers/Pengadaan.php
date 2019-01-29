@@ -214,7 +214,7 @@ class Pengadaan extends CI_Controller {
 				}
 			}
 
-			redirect('Pengadaan/edit/'.$id);
+			redirect('Dashboard');
 			#vardump
 			echo "<pre>";
 			var_dump($_POST);

@@ -30,13 +30,15 @@
     </style>
 </head>
 
-<body background="homelogin.jpg;">
+<body background="<?php echo base_url('assets_login/images/login.jpg') ?>" >
     <!-- ============================================================== -->
     <!-- login page  -->
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"><a href="/index.html"><img class="logo-img" src="<?php echo base_url('assets/');?>/assets/images/logo.png" alt="logo"></a><span class="splash-description">Login</span></div>
+            <div class="card-header text-center"><a href="/index.html"><img class="logo-img" src="<?php echo base_url('assets/');?>/assets/images/logo.png" alt="logo"></a>
+
+            <span class="splash-description">Login</span></div>
             <div class="card-body">
                 <?php echo $this->session->flashdata('message') ?>
                 <form method="post" action="<?php echo site_url('Login/proses') ?>">

@@ -72,11 +72,11 @@
 
                                                         ?>
                                                         <tr class="<?php echo ($month >= 1 ? "bg-danger text-white" : "") ?>">
-                                                            <td><?php echo ++$key.$month ?></td>
+                                                            <td><?php echo ++$key ?></td>
                                                             <td><?php echo $value->nomor ?></td>
                                                             <td><?php echo $value->nama ?></td>
                                                             <td><?php echo $value->tanggal ?></td>
-                                                            <td><?php echo $value->inisiator_nama." ".$value->inisiator_devisi ?></td>
+                                                            <td><?php echo $value->inisiator_nama." - ".$value->inisiator_devisi ?></td>
                                                             <td><?php echo $value->status ?></td>
                                                             <td>
                                                                 <a href="<?php echo site_url('Dashboard/detail/'.$value->id) ?>" class="btn btn-info btn-sm">Detail</a>
@@ -115,5 +115,13 @@
                 <!-- ============================================================== -->
                 <!-- end footer -->
                 <!-- ============================================================== -->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Accounts Payable Age</h5>
+                                <div class="card-body">
+                                    <canvas id="myChart" width="400" height="400"></canvas>
+                                </div>
+                            </div>
+                        </div>  
             </div>
             <?php $this->load->view('footer') ?>
