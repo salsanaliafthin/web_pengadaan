@@ -29,7 +29,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="">Sub Nama</label>
+                                <label for="">Adendum</label>
                                 <button class="btn btn-primary ml-3 btn-sm" onclick="add_subnama(); return false;"><i class="fas fa-plus"></i></button>
                             </div>
                             <div class="" id='container-subnama'>
@@ -37,8 +37,8 @@
                                     <input type="hidden" name="idsubkontrak[]" value="<?php echo $value->id ?>">
                                     <div class="form-group row">
                                         <div class="col-md-1"></div>
-                                        <label class="col-md-3">Nama Sub Kontrak</label>
-                                        <input type="text" name="subkontrak[]" class="form-control col-md-4" value="<?php echo $value->nama ?>">
+                                        <label class="col-md-3">Adendum</label>
+                                        <input type="text" name="Adendum[]" class="form-control col-md-4" value="<?php echo $value->nama ?>">
                                     </div>
                                 <?php endforeach ?>
                             </div>

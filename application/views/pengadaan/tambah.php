@@ -24,12 +24,12 @@
                     <div class="card-body">
                         <form action="" method="post">
                             <div class="form-group">
-                                <label for="">Nama</label>
+                                <label for="">Nama Kontrak</label>
                                 <input type="text" name="nama" class="form-control">
                             </div>
 
                             <div class="form-group">
-                                <label for="">Sub Nama</label>
+                                <label for="">Adendum</label>
                                 <button class="btn btn-primary ml-3 btn-sm" onclick="add_subnama(); return false;"><i class="fas fa-plus"></i></button>
                             </div>
                             <div class="" id='container-subnama'>
@@ -120,7 +120,7 @@
                                     <input type="date" class="form-control" name="pelaksanaan_from">
                                 </div>
                                 <div class="col-md-1 text-middle"> 
-                                    <input type="text" readonly value="sd" class="form-control-plaintext">
+                                    <input type="text" readonly value="s/d" class="form-control-plaintext">
                                 </div>
                                 <div class="col-md-3"> 
                                     <input type="date" class="form-control" name="pelaksanaan_to">
@@ -132,7 +132,7 @@
                                     <input type="date" class="form-control" name="pemeliharaan_from">
                                 </div>
                                 <div class="col-md-1 text-middle"> 
-                                    <input type="text" readonly value="sd" class="form-control-plaintext">
+                                    <input type="text" readonly value="s/d" class="form-control-plaintext">
                                 </div>
                                 <div class="col-md-3"> 
                                     <input type="date" class="form-control" name="pemeliharaan_to">
@@ -144,7 +144,7 @@
                                     <input type="date" class="form-control" name="garansijaminan_from">
                                 </div>
                                 <div class="col-md-1 text-middle"> 
-                                    <input type="text" readonly value="sd" class="form-control-plaintext">
+                                    <input type="text" readonly value="s/d" class="form-control-plaintext">
                                 </div>
                                 <div class="col-md-3"> 
                                     <input type="date" class="form-control" name="garansijaminan_to">
@@ -211,7 +211,7 @@
 <div class="fade" id="sample-subnama">
     <div class="form-group row">
         <div class="col-md-1"></div>
-        <label class="col-md-3">Nama Sub Kontrak <span id="nokontrak">1</span></label>
+        <label class="col-md-3">Adendum <span id="nokontrak">1</span></label>
         <input type="text" name="subkontrak[]" class="form-control col-md-4">
     </div>
 </div>
