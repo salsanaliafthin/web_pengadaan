@@ -145,7 +145,7 @@
                                                     <td><?php echo $value->nomor; ?></td>
                                                     <td><?php echo $value->nama; ?></td>
                                                     <td><?php echo $value->tanggal; ?></td>
-                                                    <td><?php echo $value->inisiator_nama." ".$value->inisiator_devisi; ?></td>
+                                                    <td><?php echo $value->inisiator_nama." - ".$value->inisiator_devisi; ?></td>
                                                     <td><?php echo $value->status; ?></td>
                                                 </tr>
                                             <?php endforeach ?>

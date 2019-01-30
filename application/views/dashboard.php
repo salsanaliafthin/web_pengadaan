@@ -79,9 +79,9 @@
                                                             <td><?php echo $value->inisiator_nama." - ".$value->inisiator_devisi ?></td>
                                                             <td><?php echo $value->status ?></td>
                                                             <td>
-                                                                <a href="<?php echo site_url('Dashboard/detail/'.$value->id) ?>" class="btn btn-info btn-sm">Detail</a>
+                                                                <a href="<?php echo site_url('Dashboard/detail/'.$value->id) ?>" class="btn btn-primary btn-sm">Detail</a>
                                                                 <a href="<?php echo site_url('Pengadaan/edit/'.$value->id) ?>" class="btn btn-success btn-sm">Edit</a>
-                                                                <a href="<?php echo site_url('Pengadaan/delete/'.$value->id) ?>" onclick="confirm('apakah anda yakin?')" class="btn btn-danger btn-sm">Hapus</a>
+                                                                <a href="<?php echo site_url('Pengadaan/delete/'.$value->id) ?>" onclick="confirm('apakah anda yakin?')" class="btn btn-warning btn-sm">Hapus</a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach ?>
