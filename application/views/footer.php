@@ -95,6 +95,47 @@ var myPieChart = new Chart($('#myChart'),{
     type: 'pie',
     data: data,
 });
+
+var ctx = document.getElementById("myBarChart");
+var Drafting = $('#myBarChart').data('drafting');
+var Onprogress = $('#myBarChart').data('onprogress');
+var Signing = $('#myBarChart').data('signing');
+var Ongoing = $('#myBarChart').data('ongoing');
+var Done = $('#myBarChart').data('done');
+var myLineChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+    datasets: [{
+      label: "Drafting",
+      backgroundColor: "rgba(2,117,216,0.5)",
+      borderColor: "rgba(2,117,216,1)",
+      data: Drafting,
+    },{
+      label: "Onprogress",
+      backgroundColor: "rgba(191, 19, 53,0.5) ",
+      borderColor: "rgba(191, 19, 53,1)",
+      data: Onprogress,
+
+    },{
+      label: "Signing",
+      backgroundColor: "rgba(138, 255, 84, 0.5)",
+      borderColor: "rgba(138, 255, 84, 1)",
+      data: Signing,
+    },{
+      label: "Ongoing",
+      backgroundColor: "rgba(208, 89, 255, 0.5)",
+      borderColor: "rgba(208, 89, 255, 1)",
+      data: Ongoing,
+    },{
+      label: "Done",
+      backgroundColor: "rgba(255, 125, 89, 0.5)",
+      borderColor: "rgba(255, 125, 89, 1)",
+      data: Done,
+    }],
+  }
+});
+
 </script>
 </body>
 

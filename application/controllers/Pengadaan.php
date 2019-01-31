@@ -84,7 +84,7 @@ class Pengadaan extends CI_Controller {
 				}
 			}
 
-			redirect('Pengadaan/tambah');
+			redirect('Dashboard');
 			#vardump
 			// echo "<pre>";
 			// var_dump($_POST);

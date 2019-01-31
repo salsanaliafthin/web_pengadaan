@@ -13,7 +13,7 @@
                         <div class="page-breadcrumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="<?php echo base_url('Dashboard') ?>" class="breadcrumb-link">Dashboard</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Dashboard Superadmin</li>
                                 </ol>
                             </nav>
@@ -79,9 +79,9 @@
                                                             <td><?php echo $value->inisiator_nama." - ".$value->inisiator_devisi ?></td>
                                                             <td><?php echo $value->status ?></td>
                                                             <td>
-                                                                <a href="<?php echo site_url('Dashboard/detail/'.$value->id) ?>" class="btn btn-primary btn-sm">Detail</a>
-                                                                <a href="<?php echo site_url('Pengadaan/edit/'.$value->id) ?>" class="btn btn-success btn-sm">Edit</a>
-                                                                <a href="<?php echo site_url('Pengadaan/delete/'.$value->id) ?>" onclick="confirm('apakah anda yakin?')" class="btn btn-warning btn-sm">Hapus</a>
+                                                                <a href="<?php echo site_url('Dashboard/detail/'.$value->id) ?>"  class="btn btn-primary btn-sm"><i class="fas fa-indent mr-2"></i>Detail</a>
+                                                                <a href="<?php echo site_url('Pengadaan/edit/'.$value->id) ?>" class="btn btn-success btn-sm"> <i class="fas fa-pencil-alt mr-2"></i>Edit</a>
+                                                                <a href="<?php echo site_url('Pengadaan/delete/'.$value->id) ?>" onclick="confirm('apakah anda yakin?')" class="btn btn-warning btn-sm"><i class="fas fa-trash mr-2"></i>Hapus</a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach ?>

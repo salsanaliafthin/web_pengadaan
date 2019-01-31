@@ -9,8 +9,7 @@
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo site_url('/Dashboard') ?>" class="breadcrumb-link">Dashboard</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Tabel Pengadaan</li>
                             </ol>
                         </nav>
@@ -21,6 +20,9 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
+                    <div class="card-header">
+                            <a href="<?php echo site_url('Dashboard') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+                        </div>
                     <div class="card-body">
                         <form action="" method="post">
                             <div class="form-group">
@@ -49,9 +51,9 @@
                                 <label for="">Inisiator</label>
                                 <div class="input-group">
 
-                                    <input type="text" value="nama :" readonly class="form-control col-md-1">
+                                    <input type="text" value="Nama :" readonly class="form-control col-md-1">
                                     <input type="text" name="inisiator_nama" class="form-control col-md-5">
-                                    <input type="text" value="devisi :" readonly class="form-control col-md-1">
+                                    <input type="text" value="Divisi :" readonly class="form-control col-md-1">
                                     <input type="text" name="inisiator_devisi" class="form-control col-md-5">
                                 </div>
 
@@ -122,7 +124,7 @@
                               </div>
                               <div class="custom-control custom-radio custom-control-inline">
                                   <input type="radio" id="carapembayaran2" name="carapembayaran" class="custom-control-input" value="petermin">
-                                  <label class="custom-control-label" for="carapembayaran2">Pertermin</label>
+                                  <label class="custom-control-label" for="carapembayaran2">Per termin</label>
                                    <button class="btn btn-primary ml-3 btn-sm" onclick="add_petermin(); return false;"><i class="fas fa-plus"></i></button>
                     
                             </div>
@@ -193,8 +195,8 @@
                                     </select>
                                 </div>
 
-                                <input type="submit" value="Submit" class="btn btn-primary">
-                                <form method="post" action="<?php echo site_url('Pengadaan') ?>">
+                                <input type="submit" value="Submit" class="btn btn-primary" >
+                                <form method="post"  action="<?php echo site_url('Dashboard') ?>">
                             </form>
                         </div>
                     </div>
@@ -268,6 +270,7 @@
 <?php $this->load->view('footer') ?>
 <script>
     var idxsub = 1;
+    var idxpertermin = 1;
     function add_penandatanganan() {
         var sample = $('#sample-penandatanganan').html();
 
@@ -282,8 +285,8 @@
     }
     function add_petermin() {
         var sample = $('#sample-petermin').html();
-        idxsub ++;
-        $('#sample-petermin').find('#nopetermin').html(idxsub);
+        idxpertermin ++;
+        $('#sample-petermin').find('#nopetermin').html(idxpertermin);
 
         $('#container-petermin').append(sample);
     }

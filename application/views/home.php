@@ -33,7 +33,7 @@
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-inverse fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">JSM</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,9 +46,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">List Pengadaan</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Login') ?>">Login</a>
             </li>
           </ul>
         </div>
@@ -66,7 +63,7 @@
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5"> PT. Jasa Marga Surabaya Mojokerto</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">LIST PENGADAAN</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="<?php echo site_url('Login') ?>">LOGIN</a>
           </div>
         </div>
       </div>
@@ -75,13 +72,26 @@
     <section class="bg-primary" id="chart">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">CHART PENGADAAN</h2>
-            <hr class="my-4">
-          </div>
-        </div>
+
+        <div class="col-lg-8 mx-auto text-center">
+            <a href="#" class="btn btn-primary" onclick="showchart()">Chart</a>
+            <a href="#" class="btn btn-success" onclick="showbar()">Bar</a>
+            <script>
+                function showchart() {
+                    // body...
+                    $("#chart-container").fadeIn();
+                    $("#bar-container").fadeOut();
+                }function showbar() {
+                    // body...
+                    $("#chart-container").fadeOut();
+                    $("#bar-container").fadeIn();
+                }
+
+            </script>
+            <hr class="my-3">
+
         <div class="row">
-          <div class="col-lg-5 mx-auto text-center">
+          <div class="col-lg-8 mx-auto text-center">
                                     <canvas id="myChart" width="100%" height="100%"></canvas>
           </div>
         </div>
@@ -260,6 +270,46 @@ data = {
 var myPieChart = new Chart($('#myChart'),{
     type: 'pie',
     data: data,
+});
+
+var ctx = document.getElementById("myBarChart");
+var Drafting = $('#myBarChart').data('drafting');
+var Onprogress = $('#myBarChart').data('onprogress');
+var Signing = $('#myBarChart').data('signing');
+var Ongoing = $('#myBarChart').data('ongoing');
+var Done = $('#myBarChart').data('done');
+var myLineChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+    datasets: [{
+      label: "Drafting",
+      backgroundColor: "rgba(2,117,216,0.5)",
+      borderColor: "rgba(2,117,216,1)",
+      data: Drafting,
+    },{
+      label: "Onprogress",
+      backgroundColor: "rgba(191, 19, 53,0.5) ",
+      borderColor: "rgba(191, 19, 53,1)",
+      data: Onprogress,
+
+    },{
+      label: "Signing",
+      backgroundColor: "rgba(2,117,216,0.5)",
+      borderColor: "rgba(2,117,216,1)",
+      data: Signing,
+    },{
+      label: "Ongoing",
+      backgroundColor: "rgba(2,117,216,0.5)",
+      borderColor: "rgba(2,117,216,1)",
+      data: Ongoing,
+    },{
+      label: "Done",
+      backgroundColor: "rgba(2,117,216,0.5)",
+      borderColor: "rgba(2,117,216,1)",
+      data: Done,
+    }],
+  }
 });
 </script>
 

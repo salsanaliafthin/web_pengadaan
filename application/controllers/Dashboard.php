@@ -36,6 +36,7 @@ class Dashboard extends CI_Controller {
 		$data['kontrak'] = $kontrak;
 		$this->load->view('dashboard',$data);
 	}
+
 	public function detail($id)
 	{
 		#getdata kontrak
