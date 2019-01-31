@@ -74,7 +74,7 @@
                                                         }
 
                                                         ?>
-                                                        <tr class="<?php echo ($month == 0 ? "bg-danger text-white" : "") ?>">
+                                                        <tr class="<?php echo ($month == 0 ? "" : "") ?>">
                                                             <td><?php echo ++$key ?></td>
                                                             <td><?php echo $value->nomor ?></td>
                                                             <td><?php echo $value->nama ?></td>
@@ -82,9 +82,11 @@
                                                             <td><?php echo $value->inisiator_nama." - ".$value->inisiator_devisi ?></td>
                                                             <td><?php echo $value->status ?></td>
                                                             <td>
-                                                                <a href="<?php echo site_url('Listpengadaan/detail/'.$value->id) ?>"  class="btn btn-primary btn-sm"><i class="fas fa-indent mr-2"></i>Detail</a>
-                                                                <a href="<?php echo site_url('Pengadaan/edit/'.$value->id) ?>" class="btn btn-success btn-sm"> <i class="fas fa-pencil-alt mr-2"></i>Edit</a>
-                                                                <a href="<?php echo site_url('Pengadaan/delete/'.$value->id) ?>" onclick="confirm('apakah anda yakin?')" class="btn btn-warning btn-sm"><i class="fas fa-trash mr-2"></i>Hapus</a>
+                                                                <a href="<?php echo site_url('Listpengadaan/detail/'.$value->id) ?>"  class="btn btn-small text-primary"><i class="fas fa-indent mr-2"></i>Detail</a>
+
+                                                                <a href="<?php echo site_url('Pengadaan/edit/'.$value->id) ?>" class="btn btn-small text-success"><i class="fas fa-edit mr-2"></i>Edit</a>
+
+                                                                <a href="<?php echo site_url('Pengadaan/delete/'.$value->id) ?>" onclick="confirm('apakah anda yakin?')"  class="btn btn-small text-danger"><i class="fas fa-trash mr-2"></i>Delete</a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach ?>

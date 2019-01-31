@@ -22,23 +22,6 @@
                 </div>
             </div>
 
-            <div class="row">
-      <div class="col-xl-3 col-sm-6 mb-3">
-        <div class="card text-white bg-danger o-hidden h-100">
-        <div class="card-body">
-        <div class="card-body-icon">
-        </div>
-        <div class="mr-5"><?php echo $this->db->select('count(id) as jml')->where('status',"Warning")->get('kontrak')->row(0)->jml ?> Warning</div>
-        </div>
-        <a class="card-footer text-dark clearfix small z-1">
-        <span class="float-left">View Details</span>
-        <span class="float-right">
-          <i class="fas fa-angle-right"></i>
-        </span>
-        
-        </a>
-      </div>
-      </div>
 
       <div class="container">
         <div class="row">

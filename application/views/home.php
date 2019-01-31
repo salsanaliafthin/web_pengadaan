@@ -77,8 +77,8 @@
         <div class="row">
 
         <div class="col-lg-8 mx-auto text-center">
-            <a href="#" class="btn btn-primary" onclick="showchart()">Chart</a>
-            <a href="#" class="btn btn-success" onclick="showbar()">Bar</a>
+            <button href="#" class="btn btn-primary" onclick="showchart()">Chart</button>
+            <button href="#" class="btn btn-success" onclick="showbar()">Bar</button>
             <script>
                 function showchart() {
                     // body...
@@ -93,11 +93,18 @@
             </script>
             <hr class="my-3">
 
-        <div class="row">
+        <div class="row" id="chart-container">
           <div class="col-lg-8 mx-auto text-center">
                                     <canvas id="myChart" width="100%" height="100%"></canvas>
           </div>
         </div>
+
+        <div class="row" id="bar-container">
+          <div class="col-lg-8 mx-auto text-center">
+                                    <canvas id="myBarChart" width="100%" height="100%"></canvas>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -153,7 +160,7 @@
                                                         }
 
                                                         ?>
-                                                        <tr class="<?php echo ($month == 0 ? "bg-danger text-white" : "") ?>">
+                                                        <tr class="<?php echo ($month == 0 ? "" : "") ?>">
                                                     <td><?php echo ++$key ?></td>
                                                     <td><?php echo $value->nomor; ?></td>
                                                     <td><?php echo $value->nama; ?></td>
