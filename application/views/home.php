@@ -47,6 +47,9 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">List Pengadaan</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -181,6 +184,30 @@
                 </div>
                 
             </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">CONTACT WITH US!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Gedung MNA, Jl. Raya Taman, Plaza Tol Waru I & Ramp, Sidoarjo 61257 </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+            <p>123-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">jsm@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Bootstrap core JavaScript -->
