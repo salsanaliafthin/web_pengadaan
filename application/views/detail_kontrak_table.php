@@ -39,6 +39,9 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
+                                 <div class="card-header">
+                            <a href="<?php echo site_url('Listpengadaan') ?>"><i class="fas fa-arrow-left"></i>Back to List Pengadaan</a>
+                        </div>
                                 <h5 class="card-header">Detail Kontrak</h5>
                                 <div class="card-body" style="width: 50%">
                                     <table class="table">
