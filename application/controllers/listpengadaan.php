@@ -18,8 +18,48 @@ class Listpengadaan extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct()
+	{
+		parent::__construct();
+		//gae memindah halaman jika belum login
+		if ($this->session->userdata('logged_in') == null) {
+			redirect('Login');
+		}
+	}
 	public function index()
 	{
-		$this->load->view('listpengadaan');
+		#getdata kontrak
+		$query = $this->db->get('kontrak');
+		$kontrak = $query->result();
+
+		#senddata toview
+		$data['kontrak'] = $kontrak;
+		$this->load->view('listpengadaan',$data);
 	}
+
+	public function detail($id)
+	{
+		#getdata kontrak
+		$this->db->where('id',$id);
+		$query = $this->db->get('kontrak');
+		$kontrak = $query->row(0);
+
+		#getdata kontrak_sub
+		$this->db->where('fk_kontrak',$id);
+		$query = $this->db->get('kontrak_sub');
+		$kontrak_sub = $query->result();
+
+		#getdata kontrak_sub
+		$this->db->where('fk_kontrak',$id);
+		$query = $this->db->get('kontrak_penandatanganan');
+		$kontrak_penandatanganan = $query->result();
+
+		#senddata toview
+		$data['kontrak'] = $kontrak;
+		$data['kontrak_sub'] = $kontrak_sub;
+		$data['kontrak_penandatanganan'] = $kontrak_penandatanganan;
+		$this->load->view('detail_kontrak',$data);
+	}
+
+	
 }

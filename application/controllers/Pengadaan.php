@@ -84,7 +84,7 @@ class Pengadaan extends CI_Controller {
 				}
 			}
 
-			redirect('Dashboard');
+			redirect('Listpengadaan');
 			#vardump
 			// echo "<pre>";
 			// var_dump($_POST);
@@ -214,7 +214,7 @@ class Pengadaan extends CI_Controller {
 				}
 			}
 
-			redirect('Dashboard');
+			redirect('Listpengadaan');
 			#vardump
 			echo "<pre>";
 			var_dump($_POST);
@@ -236,7 +236,7 @@ class Pengadaan extends CI_Controller {
 		$this->db->where('id',$id);
 		$this->db->delete('kontrak');
 
-		redirect('Dashboard','refresh');
+		redirect('Listpengadaan','refresh');
 	}
 
 }

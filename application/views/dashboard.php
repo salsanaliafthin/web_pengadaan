@@ -14,7 +14,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="<?php echo site_url('Dashboard') ?>" class="breadcrumb-link">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">List Pengadaan</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Status pengadaan</li>
                                 </ol>
                             </nav>
                         </div>
@@ -22,9 +22,40 @@
                 </div>
             </div>
 
+            <div class="row">
+      <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-danger o-hidden h-100">
+        <div class="card-body">
+        <div class="card-body-icon">
+        </div>
+        <div class="mr-5"><?php echo $this->db->select('count(id) as jml')->where('status',"Warning")->get('kontrak')->row(0)->jml ?> Warning</div>
+        </div>
+        <a class="card-footer text-dark clearfix small z-1">
+        <span class="float-left">View Details</span>
+        <span class="float-right">
+          <i class="fas fa-angle-right"></i>
+        </span>
+        
+        </a>
+      </div>
+      </div>
+
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-right">
+            
+           
+          </div>
+        </div>
+         
+    <div class="card mb-3">
+      <div class="card-header">
+      <i class="fas fa-chart-area"></i>
+      Status Pengadaan</div>
+
+      <div class="row">
+          <div class="col-lg-8 mx-auto text-right">
+            <br>
             <a href="#" class="btn btn-primary" onclick="showchart()">Chart</a>
             <a href="#" class="btn btn-success" onclick="showbar()">Bar</a>
             <script>
@@ -38,11 +69,11 @@
                     $("#bar-container").fadeIn();
                 }
             </script>
-            <hr class="my-3">
+            
           </div>
         </div>
-         
        
+       <br>
         <div class="row" id="chart-container">
           <div class="col-lg-5 mx-auto text-center">
              <canvas id="myChart" width="100%" height="100%"></canvas>
@@ -164,7 +195,7 @@
 
        ?>
 
-
+<br>
         <div class="row" id="bar-container" style="display: none">
           <div class="col-lg-8 mx-auto text-center">
              <canvas id="myBarChart" width="150%" height="80" data-drafting='<?php echo $retDrafting ?>' data-onprogress='<?php echo $retOnprogress ?>' data-signing='<?php echo $retSigning ?>' data-ongoing='<?php echo $retOngoing ?>' data-done='<?php echo $retDone ?>'></canvas>

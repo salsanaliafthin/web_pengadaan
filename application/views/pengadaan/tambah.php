@@ -21,7 +21,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
                     <div class="card-header">
-                            <a href="<?php echo site_url('Dashboard') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+                            <a href="<?php echo site_url('Listpengadaan') ?>"><i class="fas fa-arrow-left"></i> Back</a>
                         </div>
                     <div class="card-body">
                         <form action="" method="post">

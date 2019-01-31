@@ -49,6 +49,7 @@
                         <input class="form-control form-control-lg" name="password" type="password" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                    
                 </form>
             </div>
         </div>
