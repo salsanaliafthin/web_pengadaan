@@ -216,7 +216,7 @@
 
 <br>
         <div class="row" id="bar-container" style="display: none">
-          <div class="col-lg-12 mx-auto text-center">
+          <div class="col-lg-11 mx-auto text-center">
              <canvas id="myBarChart" width="170%" height="80" data-drafting='<?php echo $retDrafting ?>' data-onprogress='<?php echo $retOnprogress ?>' data-signing='<?php echo $retSigning ?>' data-ongoing='<?php echo $retOngoing ?>' data-done='<?php echo $retDone ?>'></canvas>
           </div>
         </div>
@@ -459,6 +459,35 @@ var myLineChart = new Chart(ctx, {
       borderColor: "rgba(255, 125, 89, 1)",
       data: Done,
     }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'month'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 6
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          maxTicksLimit: 5,
+          stepSize : 1
+
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
   }
 });
 </script>
