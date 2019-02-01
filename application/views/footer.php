@@ -133,6 +133,35 @@ var myLineChart = new Chart(ctx, {
       borderColor: "rgba(255, 125, 89, 1)",
       data: Done,
     }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'month'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 6
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          maxTicksLimit: 5,
+          stepSize : 1
+
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
   }
 });
 

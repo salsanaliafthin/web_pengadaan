@@ -76,9 +76,9 @@
       <div class="container">
         <div class="row">
 
-        <div class="col-lg-8 mx-auto text-center">
-            <button href="#" class="btn btn-primary" onclick="showchart()">Chart</button>
-            <button href="#" class="btn btn-success" onclick="showbar()">Bar</button>
+        <div class="col-lg-9 mx-auto text-center">
+            <button href="#" class="btn btn-dark" onclick="showchart()">Chart</button>
+            <button href="#" class="btn btn-dark" onclick="showbar()">Bar</button>
             <script>
                 function showchart() {
                     // body...
@@ -94,14 +94,130 @@
             <hr class="my-3">
 
         <div class="row" id="chart-container">
-          <div class="col-lg-8 mx-auto text-center">
+          <div class="col-lg-6 mx-auto text-center">
                                     <canvas id="myChart" width="100%" height="100%"></canvas>
           </div>
         </div>
 
-        <div class="row" id="bar-container">
-          <div class="col-lg-8 mx-auto text-center">
-                                    <canvas id="myBarChart" width="100%" height="100%"></canvas>
+        <?php 
+      $this->db->select('month(tanggal) as bulan,count(id) as jumlah');
+      $this->db->from('kontrak');
+      $this->db->group_by('month(tanggal)');
+      $this->db->where('status','Drafting');
+      $this->db->where('year(tanggal)','2019');
+      $resDrafting = $this->db->get()->result();
+      $retDrafting = "[";
+      $idx = 0;
+      for ($i=0; $i < 12; $i++) {  
+       if(count($resDrafting) == 0 || !isset($resDrafting[$idx])){
+          $retDrafting .= '"0",';
+        }else if ($resDrafting[$idx]->bulan == ($i+1)) {
+          $retDrafting .= '"'.$resDrafting[$idx]->jumlah.'",';
+          $idx++;
+        }else{
+          $retDrafting .= '"0",';
+        }
+      }
+      $retDrafting = substr($retDrafting, 0,-1)."]";
+
+       ?>
+
+       <?php 
+      $this->db->select('month(tanggal) as bulan,count(id) as jumlah');
+      $this->db->from('kontrak');
+      $this->db->group_by('month(tanggal)');
+      $this->db->where('status','On progress');
+      $this->db->where('year(tanggal)','2019');
+      $resOnprogress = $this->db->get()->result();
+      $retOnprogress= "[";
+      $idx = 0;
+      for ($i=0; $i < 12; $i++) {  
+       if(count($resOnprogress) == 0 || !isset($resOnprogress[$idx])){
+          $retOnprogress.= '"0",';
+        }else if ($resOnprogress[$idx]->bulan == ($i+1)) {
+          $retOnprogress.= '"'.$resOnprogress[$idx]->jumlah.'",';
+          $idx++;
+        }else{
+          $retOnprogress.= '"0",';
+        }
+      }
+      $retOnprogress= substr($retOnprogress, 0,-1)."]";
+
+       ?>
+
+       <?php 
+      $this->db->select('month(tanggal) as bulan,count(id) as jumlah');
+      $this->db->from('kontrak');
+      $this->db->group_by('month(tanggal)');
+      $this->db->where('status','Signing');
+      $this->db->where('year(tanggal)','2019');
+      $resSigning = $this->db->get()->result();
+      $retSigning = "[";
+      $idx = 0;
+      for ($i=0; $i < 12; $i++) {  
+       if(count($resSigning) == 0 || !isset($resSigning[$idx])){
+          $retSigning .= '"0",';
+        }else if ($resSigning[$idx]->bulan == ($i+1)) {
+          $retSigning .= '"'.$resSigning[$idx]->jumlah.'",';
+          $idx++;
+        }else{
+          $retSigning .= '"0",';
+        }
+      }
+      $retSigning = substr($retSigning, 0,-1)."]";
+
+       ?>
+
+       <?php 
+      $this->db->select('month(tanggal) as bulan,count(id) as jumlah');
+      $this->db->from('kontrak');
+      $this->db->group_by('month(tanggal)');
+      $this->db->where('status','On going');
+      $this->db->where('year(tanggal)','2019');
+      $resOngoing = $this->db->get()->result();
+      $retOngoing = "[";
+      $idx = 0;
+      for ($i=0; $i < 12; $i++) {  
+       if(count($resOngoing) == 0 || !isset($resOngoing[$idx])){
+          $retOngoing .= '"0",';
+        }else if ($resOngoing[$idx]->bulan == ($i+1)) {
+          $retOngoing .= '"'.$resOngoing[$idx]->jumlah.'",';
+          $idx++;
+        }else{
+          $retOngoing .= '"0",';
+        }
+      }
+      $retOngoing = substr($retOngoing, 0,-1)."]";
+
+       ?>
+
+       <?php 
+      $this->db->select('month(tanggal) as bulan,count(id) as jumlah');
+      $this->db->from('kontrak');
+      $this->db->group_by('month(tanggal)');
+      $this->db->where('status','Done');
+      $this->db->where('year(tanggal)','2019');
+      $resDone = $this->db->get()->result();
+      $retDone = "[";
+      $idx = 0;
+      for ($i=0; $i < 12; $i++) {  
+       if(count($resDone) == 0 || !isset($resDone[$idx])){
+          $retDone .= '"0",';
+        }else if ($resDone[$idx]->bulan == ($i+1)) {
+          $retDone .= '"'.$resDone[$idx]->jumlah.'",';
+          $idx++;
+        }else{
+          $retDone .= '"0",';
+        }
+      }
+      $retDone = substr($retDone, 0,-1)."]";
+
+       ?>
+
+<br>
+        <div class="row" id="bar-container" style="display: none">
+          <div class="col-lg-12 mx-auto text-center">
+             <canvas id="myBarChart" width="170%" height="80" data-drafting='<?php echo $retDrafting ?>' data-onprogress='<?php echo $retOnprogress ?>' data-signing='<?php echo $retSigning ?>' data-ongoing='<?php echo $retOngoing ?>' data-done='<?php echo $retDone ?>'></canvas>
           </div>
         </div>
 
@@ -329,23 +445,24 @@ var myLineChart = new Chart(ctx, {
 
     },{
       label: "Signing",
-      backgroundColor: "rgba(2,117,216,0.5)",
-      borderColor: "rgba(2,117,216,1)",
+      backgroundColor: "rgba(138, 255, 84, 0.5)",
+      borderColor: "rgba(138, 255, 84, 1)",
       data: Signing,
     },{
       label: "Ongoing",
-      backgroundColor: "rgba(2,117,216,0.5)",
-      borderColor: "rgba(2,117,216,1)",
+     backgroundColor: "rgba(208, 89, 255, 0.5)",
+      borderColor: "rgba(208, 89, 255, 1)",
       data: Ongoing,
     },{
       label: "Done",
-      backgroundColor: "rgba(2,117,216,0.5)",
-      borderColor: "rgba(2,117,216,1)",
+        backgroundColor: "rgba(255, 125, 89, 0.5)",
+      borderColor: "rgba(255, 125, 89, 1)",
       data: Done,
     }],
   }
 });
 </script>
+
 
   </body>
 
